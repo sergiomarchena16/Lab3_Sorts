@@ -40,12 +40,14 @@ public class MainSorts{
         FileReader file = new FileReader("nums.txt");
         int[] integers = new int [20];
         int i=0;
+        int[] unsorted= new int [20];
         try {
             Scanner input = new Scanner(file);
             while(input.hasNext())
             {
                 integers[i] = input.nextInt();
                 i++;
+                unsorted=integers;
             }
             input.close();
         }
@@ -53,11 +55,22 @@ public class MainSorts{
             e.printStackTrace();
         } 
         
-        System.out.println("Not sorted:" +Arrays.toString(integers));
+        /**
         Sorts.gnomeSort(integers, integers.length);
         System.out.print("Gnome sorted: ");
         System.out.println(Arrays.toString(integers));
+         */
+        /**
         
+        System.out.println("Not sorted:" +Arrays.toString(unsorted));
+        Sorts.quickSort(unsorted, 0, integers.length-1);
+        System.out.println("QuickSort: ");
+        System.out.println(Arrays.toString(integers));
+        */
+        System.out.println("Not sorted:" +Arrays.toString(unsorted));
+        Sorts.radixSort(unsorted);
+        System.out.println("QuickSort: ");
+        System.out.println(Arrays.toString(integers));
     }
     
         
