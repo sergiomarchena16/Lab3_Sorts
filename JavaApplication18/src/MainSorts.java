@@ -26,7 +26,7 @@ public class MainSorts{
         try {
             PrintWriter writer = new PrintWriter("nums.txt", "UTF-8");
             Random randomNum = new Random();
-            for (int i=1; i<=20; i++){
+            for (int i=1; i<=10; i++){
                 int randomInt = randomNum.nextInt(100);
                 writer.println(randomInt); 
             }
@@ -38,9 +38,9 @@ public class MainSorts{
         
         //LEE EL ARCHIVO.TXT (nums.txt) Y LO GUARDA EN UN ARRAY.
         FileReader file = new FileReader("nums.txt");
-        int[] integers = new int [20];
+        int[] integers = new int [10];
         int i=0;
-        int[] unsorted= new int [20];
+        int[] unsorted= new int [10];
         try {
             Scanner input = new Scanner(file);
             while(input.hasNext())
@@ -59,18 +59,21 @@ public class MainSorts{
         Sorts.gnomeSort(integers, integers.length);
         System.out.print("Gnome sorted: ");
         System.out.println(Arrays.toString(integers));
-         */
-        /**
-        
-        System.out.println("Not sorted:" +Arrays.toString(unsorted));
-        Sorts.quickSort(unsorted, 0, integers.length-1);
-        System.out.println("QuickSort: ");
-        System.out.println(Arrays.toString(integers));
         */
+        
+       
+        
+        
+        Sorts.quickSort(unsorted, 0, integers.length-1);
+    
+        
+       
+        /**
         System.out.println("Not sorted:" +Arrays.toString(unsorted));
         Sorts.radixSort(unsorted);
-        System.out.println("QuickSort: ");
+        System.out.println("RadixSort: ");
         System.out.println(Arrays.toString(integers));
+        */
     }
     
         
