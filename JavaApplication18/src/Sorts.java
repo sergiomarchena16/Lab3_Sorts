@@ -9,7 +9,7 @@
  * @author SergioMarchena
  */
 public class Sorts {
-    
+ 
     
     static void gnomeSort(int arr[], int n)
     {
@@ -34,7 +34,7 @@ public class Sorts {
     // Merges two subarrays of arr[].
     // First subarray is arr[izquierda..m]
     // Second subarray is arr[m+1..derecha]
-    void merge(int arr[], int l, int m, int r)
+    static void merge(int arr[], int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
         int n1=m-l+1;
@@ -91,7 +91,7 @@ public class Sorts {
  
     // Main function that sorts arr[l..r] using
     // merge()
-    void sort(int arr[], int l, int r)
+    static void sort(int arr[], int l, int r)
     {
         if (l < r)
         {
@@ -181,7 +181,26 @@ public class Sorts {
 
         }
 
-    }    
+    }
+
+    static void selectionSort (Comparable[] list)
+       {
+          int min;
+          Comparable temp;
+
+          for (int index = 0; index < list.length-1; index++)
+          {
+             min = index;
+             for (int scan = index+1; scan < list.length; scan++)
+                if (list[scan].compareTo(list[min]) < 0)
+                   min = scan;
+
+             // Swap the values
+             temp = list[min];
+             list[min] = list[index];
+             list[index] = temp;
+          }
+       }    
     
      
 }
