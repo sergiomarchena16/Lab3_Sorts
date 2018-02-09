@@ -26,8 +26,13 @@ public class MainSorts{
         try {
             PrintWriter writer = new PrintWriter("nums.txt", "UTF-8");
             Random randomNum = new Random();
+<<<<<<< HEAD
             for (int i=1; i<=10; i++){
                 int randomInt = randomNum.nextInt(100);
+=======
+            for (int i=1; i<=20; i++){ // ACA HAY QUE PONER 3000 
+                int randomInt = randomNum.nextInt(1000);
+>>>>>>> 2eed835ee237b5e6cb6c6609c7f487ffb4b0b784
                 writer.println(randomInt); 
             }
             writer.close();
@@ -38,9 +43,15 @@ public class MainSorts{
         
         //LEE EL ARCHIVO.TXT (nums.txt) Y LO GUARDA EN UN ARRAY.
         FileReader file = new FileReader("nums.txt");
+<<<<<<< HEAD
         int[] integers = new int [10];
         int i=0;
         int[] unsorted= new int [10];
+=======
+        int[] integers = new int [20]; // ACA SON 3000
+        int i=0;
+        int[] unsorted= new int [20]; // ACA SON 3000
+>>>>>>> 2eed835ee237b5e6cb6c6609c7f487ffb4b0b784
         try {
             Scanner input = new Scanner(file);
             while(input.hasNext())
@@ -73,7 +84,18 @@ public class MainSorts{
         Sorts.radixSort(unsorted);
         System.out.println("RadixSort: ");
         System.out.println(Arrays.toString(integers));
+<<<<<<< HEAD
         */
+=======
+        
+        
+        //MERGE SORT
+        
+        Sorts merge = new Sorts();
+        merge.sort(integers, 0, 2999); //3000-1 = 2999 (ES LA CANTIDAD DE NUMEROS).
+        
+        
+>>>>>>> 2eed835ee237b5e6cb6c6609c7f487ffb4b0b784
     }
     
         
