@@ -70,9 +70,15 @@ public class MainSorts{
        
         
         System.out.println("Not sorted:" +Arrays.toString(unsorted));
-        Sorts.radixSort(unsorted);
-        System.out.println("RadixSort: ");
+        Sorts.bubbleSort(unsorted);
+        System.out.println("BbublleSort: ");
         System.out.println(Arrays.toString(integers));
+        
+        System.out.println("Not sorted:" +Arrays.toString(unsorted));
+        Sorts.quickSort(unsorted,0,9);
+        System.out.println("QuickSort: ");
+        System.out.println(Arrays.toString(integers));
+        
         
 
         

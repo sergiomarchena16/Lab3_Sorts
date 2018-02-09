@@ -183,24 +183,19 @@ public class Sorts {
 
     }
 
-    static void selectionSort (Comparable[] list)
-       {
-          int min;
-          Comparable temp;
-
-          for (int index = 0; index < list.length-1; index++)
-          {
-             min = index;
-             for (int scan = index+1; scan < list.length; scan++)
-                if (list[scan].compareTo(list[min]) < 0)
-                   min = scan;
-
-             // Swap the values
-             temp = list[min];
-             list[min] = list[index];
-             list[index] = temp;
-          }
-       }    
+    static void bubbleSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (arr[j] > arr[j+1])
+                {
+                    // swap temp and arr[i]
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+    }  
     
      
 }
