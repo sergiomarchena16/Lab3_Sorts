@@ -1,17 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
- *
- * @author SergioMarchena
+ * Modela las caracteristicas de diferentes Sorts para emplearlo cada uno 
+ * para medir su tiempo de ejeucion
+ * @author SergioMarchena y Maria Fernanda Lopez
+ * @version 9/02/2018
  */
-public class Sorts {
+public class Sorts implements Comparable {
  
-    
-    static void gnomeSort(int arr[], int n)
+    /**
+     * Código extraído de: https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
+     * @param arr lista de numeros enteros a ordenar 
+     * @param n  length de la lista
+     */
+    public void gnomeSort(int arr[], int n)
     {
         int index = 0;
         while (index < n)
@@ -31,10 +33,18 @@ public class Sorts {
         }
     }
     
+   
     // Merges two subarrays of arr[].
     // First subarray is arr[izquierda..m]
     // Second subarray is arr[m+1..derecha]
-    static void merge(int arr[], int l, int m, int r)
+    /**
+     * Extraído de: https://www.geeksforgeeks.org/merge-sort/
+     * @param arr
+     * @param l
+     * @param m
+     * @param r 
+     */
+    public void merge(int arr[], int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
         int n1=m-l+1;
@@ -91,7 +101,7 @@ public class Sorts {
  
     // Main function that sorts arr[l..r] using
     // merge()
-    static void sort(int arr[], int l, int r)
+    public void sort(int arr[], int l, int r)
     {
         if (l < r)
         {
@@ -106,10 +116,17 @@ public class Sorts {
             merge(arr, l, m, r);
         }
     }
+  
+     
     
     
-    
-     static void quickSort(int[] vector, int izquierda, int derecha) {
+    /**
+     * Quick Sort, utilizado el algoritmo que se encuentra en el libro del curso
+     * @param vector la lista de numeros enteros a ordenar
+     * @param izquierda el menor numero de la lista 
+     * @param derecha  el maximo numero de la lista 
+     */
+     public void quickSort(int[] vector, int izquierda, int derecha) {
         int pivote = vector[izquierda];
         int i = izquierda;
         int j = derecha;
@@ -136,10 +153,42 @@ public class Sorts {
             quickSort(vector, j + 1, derecha);
         }
     }
+       public void quickSort2(int[] vector, int izquierda, int derecha) {
+        int pivote = vector[izquierda];
+        int i = izquierda;
+        int j = derecha;
+        int auxIntercambio;
+        while (i < j) {
+            while (vector[i] <= pivote && i < j) {
+                i++;
+            }
+            while (vector[j] > pivote) {
+                j--;
+            }
+            if (i < j) {
+                auxIntercambio = vector[i];
+                vector[i] = vector[j];
+                vector[j] = auxIntercambio;
+            }
+        }
+        vector[izquierda] = vector[j];
+        vector[j] = pivote;
+        if (izquierda < j - 1) {
+            quickSort(vector, izquierda, j - 1);
+        }
+        if (j + 1 < derecha) {
+            quickSort(vector, j + 1, derecha);
+        }
+    }
+     
+      
          
-     /** Radix Sort function **/
+     /**
+      * Código extraído de: https://www.geeksforgeeks.org/radix-sort/
+      * @param a lista de enteros que se va a ordenar
+      */
 
-    static void radixSort( int[] a)
+    public void radixSort( int[] a)
 
     {
 
@@ -182,8 +231,14 @@ public class Sorts {
         }
 
     }
+    
 
-    static void bubbleSort(int arr[])
+    /**
+     * Codigo extraído de: https://www.geeksforgeeks.org/bubble-sort/
+     * 
+     * @param arr lista de enteros que se necesita ordenar
+     */
+    public void bubbleSort(int arr[])
     {
         int n = arr.length;
         for (int i = 0; i < n-1; i++)
@@ -195,7 +250,13 @@ public class Sorts {
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }
-    }  
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
      
 }
